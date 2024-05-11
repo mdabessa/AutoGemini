@@ -44,7 +44,7 @@ class Console:
         code = code.replace('\n', '\n\t')
         code = code.replace('\t', '    ')
 
-        code = self.base.replace('{code}', code)
+        code = self.base.replace("'{code}'", code)
 
         return code
 
