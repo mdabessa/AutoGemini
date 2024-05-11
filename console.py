@@ -68,6 +68,7 @@ def run_console(in_out):
             continue
 
         if in_out['in'] == '.exit':
+            executer.exit()
             break
 
         if in_out['in'] == '.restart':
