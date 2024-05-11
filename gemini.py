@@ -24,8 +24,8 @@ class Gemini:
     def generate(self, prompt: str, tag: str = 'entrada') -> str:
         r = self.chat.send_message(f'[{tag}]\n{prompt}')
 
-        print(f'{Fore.WHITE}Prompt:\n{Style.RESET_ALL}{prompt}')
-        print(f'{Fore.WHITE}Response:\n{Style.RESET_ALL}{r.text}')
+        print(f'{Fore.YELLOW}Prompt:\n{Style.RESET_ALL}{prompt}')
+        print(f'{Fore.YELLOW}Response:\n{Style.RESET_ALL}{r.text}')
         return r.text
     
     def parse(self, text: str, early_stop: str = 'entrada') -> dict:
