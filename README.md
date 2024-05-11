@@ -9,6 +9,7 @@ O ChatBot ao realizar uma tarefa que foi solicitada pelo usuário, caso necessá
 Tarefas complexas, o AutoGemini irá quebrar em partes menores e resolver cada uma delas, como por exemplo, explorar um arquivo csv com pandas, antes de processar os dados.
 
 ## Como utilizar?
+Crie um arquivo `.env` na raiz do projeto seguindo o modelo do arquivo `.env.example` e preencha as variáveis de ambiente.
 Instale as dependências necessárias:
 ```bash
 pip install -r requirements.txt
