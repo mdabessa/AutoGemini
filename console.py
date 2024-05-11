@@ -21,6 +21,10 @@ class Console:
         sys.stdout = buffer
 
         code = self.formatCode(code)
+
+        with open('./temp.py', 'w') as f:
+            f.write(code)
+
         self.console.runcode(code)
 
         sys.stdout = sys.__stdout__
@@ -28,7 +32,7 @@ class Console:
         buffer.close()
 
         output = output.strip()
-        output = f'[{len(self.history)}]:\n{output}'
+        output = f'<{len(self.history)}>:\n{output}'
 
         history['out'] = output
         self.history.append(history)
@@ -38,6 +42,7 @@ class Console:
 
     def formatCode(self, code: str) -> str:
         code = code.replace('\n', '\n\t')
+        code = code.replace('\t', '    ')
 
         code = self.base.replace('{code}', code)
 

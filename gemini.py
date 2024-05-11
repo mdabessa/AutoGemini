@@ -1,6 +1,9 @@
 import google.generativeai as genai
 import os
 import dotenv
+import re
+from colorama import Fore, Back, Style
+
 
 dotenv.load_dotenv()
 genai.configure(api_key=os.environ["API_KEY"])
@@ -16,11 +19,25 @@ class Gemini:
         
     def start(self) -> str:
         r = self.chat.send_message(self.definition)
-        return r
-
-    def generate(self, prompt: str) -> str:
-        r = self.chat.send_message(prompt)
         return r.text
+
+    def generate(self, prompt: str, tag: str = 'entrada') -> str:
+        r = self.chat.send_message(f'[{tag}]\n{prompt}')
+
+        print(f'{Fore.WHITE}Prompt:\n{Style.RESET_ALL}{prompt}')
+        print(f'{Fore.WHITE}Response:\n{Style.RESET_ALL}{r.text}')
+        return r.text
+    
+    def parse(self, text: str, early_stop: str = 'entrada') -> dict:
+        regex = r"\[(?P<chave>\w+)\](?P<valor>.*?)(?=\n\[|\Z)"
+        data = {}
+        for match in re.findall(regex, text, re.DOTALL):
+            if match[0] in data: continue
+            if early_stop and match[0] == early_stop: break
+
+            data[match[0]] = match[1].strip()
+
+        return data
 
 
 if __name__ == "__main__":
