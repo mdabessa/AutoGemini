@@ -56,6 +56,10 @@ class Console:
     def close(self):
         self.exit()
 
+    def restart(self):
+        self.close()
+        self.__init__()
+
 
 def run_console(in_out):
     executer = Console()
@@ -65,6 +69,12 @@ def run_console(in_out):
 
         if in_out['in'] == '.exit':
             break
+
+        if in_out['in'] == '.restart':
+            executer.restart()
+            in_out['status'] = 'ready'
+            in_out['out'] = ''
+            continue
 
         in_out['status'] = 'running'
 
