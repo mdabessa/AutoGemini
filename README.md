@@ -19,3 +19,11 @@ Execute o arquivo `main.py`:
 python main.py
 ```
 Obs: É interessante que você utilize um ambiente virtual para instalar as dependências, o AutoGemini pode instalar mais dependências durante a execução.
+
+Dentro do arquivo `definition.txt` você pode editar o prompt inicial do ChatBot, e contextualizar para o seu sistema, caso necessário.
+
+## Exemplo de uso
+### Organizar arquivos por tipo de extensão
+
+[![Video - Organizar Arquivos](https://img.youtube.com/vi/Ava7yJnzMw8/0.jpg)](https://www.youtube.com/watch?v=Ava7yJnzMw8)
+
