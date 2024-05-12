@@ -27,3 +27,6 @@ Dentro do arquivo `definition.txt` você pode editar o prompt inicial do ChatBot
 
 [![Video - Organizar Arquivos](https://img.youtube.com/vi/Ava7yJnzMw8/0.jpg)](https://www.youtube.com/watch?v=Ava7yJnzMw8)
 
+
+### Calcular Investimento
+[![Video - Calcular Investimento](https://img.youtube.com/vi/iosmu04jjqI/0.jpg)](https://www.youtube.com/watch?v=iosmu04jjqI)
