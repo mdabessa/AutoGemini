@@ -96,7 +96,7 @@ if __name__ == "__main__":
             in_out['out'] = out.stdout
             in_out['status'] = 'done'
 
-        if 'reiniciar' in r:
+        if 'reiniciar' in r or ('dialogo' in r and '[reiniciar]' in r['dialogo']):
             in_out['in'] = '.restart'
 
     p.join()
